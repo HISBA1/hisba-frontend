@@ -1,0 +1,117 @@
+/* Global Container */
+.container {
+    margin-top: 8%;
+    margin-bottom: 8%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Dashboard Container */
+.dashboardContainer {
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Dashboard Title */
+.dashboardTitle {
+    color: #2ba98e;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Card */
+.card {
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Content */
+.cardContent {
+    padding: 20px;
+}
+
+/* Card Title */
+.cardTitle {
+    color: #2ba98e;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Dashboard Item */
+.dashboardItem {
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+}
+
+.dashboardItem:hover {
+    background-color: #e0f2f1;
+}
+
+/* Stat Item */
+.statItem {
+    margin: 10px 0;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Dropdown */
+.dropdown {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    appearance: none;
+    background-color: #ffffff;
+    color: #333;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dropdown:focus {
+    border-color: #2ba98e;
+    box-shadow: 0 0 8px rgba(43, 169, 142, 0.5);
+    outline: none;
+}
+
+/* Item List */
+.itemList {
+    margin-top: 20px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

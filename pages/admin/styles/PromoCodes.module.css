@@ -1,0 +1,163 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.headerTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2ba98e;
+}
+
+.form, .table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inputField {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.createButton, .saveButton, .cancelButton, .paginationButton {
+    background-color: #2ba98e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.createButton:hover, .saveButton:hover, .cancelButton:hover, .paginationButton:hover {
+    background-color: #248e75;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #2ba98e;
+    color: white;
+}
+
+.deleteButton, .deactivateButton, .activateButton, .editButton {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover, .deactivateButton:hover, .activateButton:hover, .editButton:hover {
+    background-color: #d32f2f;
+}
+
+.editButton {
+    background-color: #4CAF50;
+}
+
+.editButton:hover {
+    background-color: #45a049;
+}
+
+.deactivateButton {
+    background-color: #ff9800;
+}
+
+.deactivateButton:hover {
+    background-color: #e68900;
+}
+
+.activateButton {
+    background-color: #4CAF50;
+}
+
+.activateButton:hover {
+    background-color: #45a049;
+}
+
+.noData {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginationButton {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #2ba98e;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.paginationButton:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.paginationText {
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.editContainer {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.error {
+    color: #f44336;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
