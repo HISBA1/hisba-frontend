@@ -1,36 +1,75 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
+# Node.js dependencies
+node_modules/
+.pnp
 .pnp.js
 
-# testing
-/coverage
+# Build output
+.next/
+out/
+build/
+dist/
 
-# next.js
-/.next/
-/out/
+# Testing
+coverage/
+.nyc_output
+*.lcov
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
 .pnpm-debug.log*
 
-# local env files
+# Environment
+.env
 .env*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# vercel
+# OS / Editor / IDE files
+.DS_Store
+*.pem
+.vscode-test
+.vscode/
+node_repl_history
+
+# Vercel deployment files
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Tools / Bundlers / Caches
+.cache
+.parcel-cache
+bower_components
+jspm_packages
+.rpt2_cache/
+.rts2_cache_*/
+.grunt
+.lock-wscript
+.yarn-integrity
+.npm
+.eslintcache
+.stylelintcache
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Frameworks
+.vuepress/dist
+.temp
+.nuxt
+.docusaurus
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
