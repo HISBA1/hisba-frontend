@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import { signOut } from 'next-auth/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt, faBars, faTachometerAlt, faUser, faBox, faTicketAlt , faStore, faChartLine, faClipboardList, faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
 
 const AdminNavbar = ({ toggleSidebar, isSidebarOpen }) => {
   const router = useRouter();
