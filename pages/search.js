@@ -27,7 +27,8 @@ const SearchResults = () => {
 
     return (
         <div className={styles.searchResultsContainer}>
-            <h1>Search Results for "{query}"</h1>
+           <h1>Search Results for &quot;{query}&quot;</h1>
+
             {results.length > 0 ? (
                 <ul className={styles.resultsList}>
                     {results.map((result, index) => (

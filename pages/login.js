@@ -85,7 +85,7 @@ function LoginPage() {
         </motion.button>
         {error && <motion.p className={styles.errorMessage}>{error}</motion.p>}
         <Link  href="#" className={styles.link}>Forgot Password?</Link >
-        <Link  href="/register" className={styles.link}>Don't have an account? Sign up!</Link >
+        <Link  href="/register" className={styles.link}>Don&apos;t have an account? Sign up!</Link >
       </motion.form>
     </div>
   );

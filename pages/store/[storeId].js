@@ -105,7 +105,7 @@ const StorePage = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, type: 'spring', stiffness: 100 }}
           >
-            {store?.name}'s {store?.store_type}
+            {store?.name}&aposs {store?.store_type}
             
             </motion.h1>
 
