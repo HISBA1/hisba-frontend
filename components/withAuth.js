@@ -1,10 +1,9 @@
-// components/withAuth.js
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 const withAuth = (WrappedComponent) => {
-  return (props) => {
+  const AuthenticatedComponent = (props) => {
     const { data: session, status } = useSession();
     const router = useRouter();
 
@@ -24,6 +23,11 @@ const withAuth = (WrappedComponent) => {
 
     return null;
   };
+
+  // إضافة displayName للكومبوننت الجديد
+  AuthenticatedComponent.displayName = `withAuth(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
+
+  return AuthenticatedComponent;
 };
 
 export default withAuth;
