@@ -33,7 +33,7 @@ const MyStorePage = () => {
 
   useEffect(() => {
     if (session?.user) {
-      axios.get(`http://localhost:8000/api/stores/user/`, {
+      axios.get(`https://hisba-backend.onrender.com/api/stores/user/`, {
         headers: {
           Authorization: `Bearer ${session.user.accessToken}`,
         }
@@ -45,7 +45,7 @@ const MyStorePage = () => {
 
   useEffect(() => {
     if (store?.id) {
-      axios.get(`http://localhost:8000/api/products/?store=${store.id}`)
+      axios.get(`https://hisba-backend.onrender.com/api/products/?store=${store.id}`)
         .then(res => setProducts(res.data))
         .catch(err => console.error('Error fetching products:', err));
     }
@@ -65,7 +65,7 @@ const MyStorePage = () => {
     formData.append('quantity', newProduct.quantity);
     formData.append('image', newProduct.image);
 
-    axios.post('http://localhost:8000/api/products/create/', formData, {
+    axios.post('https://hisba-backend.onrender.com/api/products/create/', formData, {
       headers: {
         Authorization: `Bearer ${session.user.accessToken}`,
         'Content-Type': 'multipart/form-data'
@@ -101,7 +101,7 @@ const MyStorePage = () => {
       formData.append('image', editingProduct.image);
     }
 
-    axios.patch(`http://localhost:8000/api/products/update/${editingProduct.id}/`, formData, {
+    axios.patch(`https://hisba-backend.onrender.com/api/products/update/${editingProduct.id}/`, formData, {
       headers: {
         Authorization: `Bearer ${session.user.accessToken}`,
         'Content-Type': 'multipart/form-data'
@@ -115,7 +115,7 @@ const MyStorePage = () => {
   };
 
   const handleProductDelete = (productId) => {
-    axios.delete(`http://localhost:8000/api/products/delete/${productId}/`, {
+    axios.delete(`https://hisba-backend.onrender.com/api/products/delete/${productId}/`, {
       headers: {
         Authorization: `Bearer ${session.user.accessToken}`
       }
@@ -132,7 +132,7 @@ const MyStorePage = () => {
     const formData = new FormData();
     formData.append('cover_image', newCoverImage);
 
-    axios.patch(`http://localhost:8000/api/stores/update/${store.id}/`, formData, {
+    axios.patch(`https://hisba-backend.onrender.com/api/stores/update/${store.id}/`, formData, {
       headers: {
         Authorization: `Bearer ${session.user.accessToken}`,
         'Content-Type': 'multipart/form-data'
@@ -188,7 +188,7 @@ const MyStorePage = () => {
     formData.append('address', editingStore.address);
     formData.append('phone', editingStore.phone);
 
-    axios.patch(`http://localhost:8000/api/stores/update/${store.id}/`, formData, {
+    axios.patch(`https://hisba-backend.onrender.com/api/stores/update/${store.id}/`, formData, {
       headers: {
         Authorization: `Bearer ${session.user.accessToken}`,
         'Content-Type': 'multipart/form-data'

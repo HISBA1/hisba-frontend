@@ -13,7 +13,7 @@ const SalesReport = () => {
     useEffect(() => {
         const fetchSales = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/reports/sales/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/reports/sales/', {
                     headers: {
                         Authorization: `Bearer ${session?.user?.accessToken}`
                     }

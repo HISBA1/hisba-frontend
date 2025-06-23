@@ -13,7 +13,7 @@ const TopRatedStoresReport = () => {
     useEffect(() => {
         const fetchTopRatedStores = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/reports/top-rated-stores/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/reports/top-rated-stores/', {
                     headers: {
                         Authorization: `Bearer ${session?.user?.accessToken}`
                     }

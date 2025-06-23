@@ -24,7 +24,7 @@ const CartPage = () => {
 
     useEffect(() => {
         if (session?.user?.accessToken) {
-            axios.get('http://localhost:8000/api/cart/', {
+            axios.get('https://hisba-backend.onrender.com/api/cart/', {
                 headers: {
                     Authorization: `Bearer ${session.user.accessToken}`
                 }
@@ -41,7 +41,7 @@ const CartPage = () => {
 
     const updateQuantity = (productId, quantity) => {
         if (quantity < 1) return;
-        axios.put(`http://localhost:8000/api/cart/`, {
+        axios.put(`https://hisba-backend.onrender.com/api/cart/`, {
             product_id: productId,
             quantity: quantity
         }, {
@@ -59,7 +59,7 @@ const CartPage = () => {
     };
 
     const removeItem = (productId) => {
-        axios.delete(`http://localhost:8000/api/cart/`, {
+        axios.delete(`https://hisba-backend.onrender.com/api/cart/`, {
             headers: {
                 Authorization: `Bearer ${session.user.accessToken}`
             },
@@ -77,7 +77,7 @@ const CartPage = () => {
     };
 
     const applyPromoCode = () => {
-        axios.post('http://localhost:8000/api/promo-codes/apply/', {
+        axios.post('https://hisba-backend.onrender.com/api/promo-codes/apply/', {
             promo_code: promoCode
         }, {
             headers: {
@@ -102,7 +102,7 @@ const CartPage = () => {
 
     const handleCheckout = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/api/checkout/', {
+            const response = await axios.post('https://hisba-backend.onrender.com/api/checkout/', {
                 address,
                 phone_number: phoneNumber,
                 payment_method: paymentMethod,
@@ -130,7 +130,7 @@ const CartPage = () => {
 
     const handleAddressBlur = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/api/calculate-delivery-fee/', {
+            const response = await axios.post('https://hisba-backend.onrender.com/api/calculate-delivery-fee/', {
                 address,
                 store_address: storeAddress
             }, {

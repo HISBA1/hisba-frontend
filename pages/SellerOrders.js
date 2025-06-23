@@ -14,7 +14,7 @@ const SellerOrders = () => {
 
   useEffect(() => {
     if (session) {
-      axios.get('http://localhost:8000/api/orders/seller/', {
+      axios.get('https://hisba-backend.onrender.com/api/orders/seller/', {
         headers: {
           Authorization: `Bearer ${session.user.accessToken}`
         }
@@ -29,7 +29,7 @@ const SellerOrders = () => {
   }, [session]);
 
   const approveOrder = (orderId) => {
-    axios.post(`http://localhost:8000/api/orders/approve/${orderId}/`, {}, {
+    axios.post(`https://hisba-backend.onrender.com/api/orders/approve/${orderId}/`, {}, {
       headers: {
         Authorization: `Bearer ${session.user.accessToken}`
       }

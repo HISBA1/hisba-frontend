@@ -14,7 +14,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (status === 'authenticated' && session?.user?.name) {
-      axios.get(`http://localhost:8000/api/profile/${session.user.name}/`, {
+      axios.get(`https://hisba-backend.onrender.com/api/profile/${session.user.name}/`, {
         headers: {
           'Authorization': `Bearer ${session.user.accessToken}`
         }
@@ -46,7 +46,7 @@ const ProfilePage = () => {
     const formData = new FormData();
     formData.append('profile_image', file);
     try {
-      await axios.patch(`http://localhost:8000/api/update-profile-image/`, formData, {
+      await axios.patch(`https://hisba-backend.onrender.com/api/update-profile-image/`, formData, {
         headers: {
           'Authorization': `Bearer ${session.user.accessToken}`,
           'Content-Type': 'multipart/form-data'
@@ -62,7 +62,7 @@ const ProfilePage = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     try {
-      const response = await axios.patch(`http://localhost:8000/api/update-profile/${session.user.name}/`, formData, {
+      const response = await axios.patch(`https://hisba-backend.onrender.com/api/update-profile/${session.user.name}/`, formData, {
         headers: {
           'Authorization': `Bearer ${session.user.accessToken}`,
           'Content-Type': 'application/json'

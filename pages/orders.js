@@ -13,7 +13,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (session) {
-            axios.get('http://localhost:8000/api/orders/user/', {
+            axios.get('https://hisba-backend.onrender.com/api/orders/user/', {
                 headers: {
                     Authorization: `Bearer ${session.user.accessToken}`
                 }

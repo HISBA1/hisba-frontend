@@ -19,12 +19,12 @@ const StorePage = () => {
 
   useEffect(() => {
     if (storeId) {
-      axios.get(`http://localhost:8000/api/stores/${storeId}`)
+      axios.get(`https://hisba-backend.onrender.com/api/stores/${storeId}`)
         .then(res => {
           setStore(res.data);
-          axios.get(`http://localhost:8000/api/products/?store=${storeId}`)
+          axios.get(`https://hisba-backend.onrender.com/api/products/?store=${storeId}`)
             .then(res => setProducts(res.data));
-          axios.get(`http://localhost:8000/api/ratings/?store_id=${storeId}`)
+          axios.get(`https://hisba-backend.onrender.com/api/ratings/?store_id=${storeId}`)
             .then(res => setRatings(res.data));
         })
         .catch(err => console.error('Error fetching store details:', err));
@@ -47,7 +47,7 @@ const StorePage = () => {
         Authorization: `Bearer ${session?.user?.accessToken}`,
       }
     };
-    axios.post(`http://localhost:8000/api/ratings/create/`, reviewData, config)
+    axios.post(`https://hisba-backend.onrender.com/api/ratings/create/`, reviewData, config)
       .then(response => {
         setRatings([...ratings, response.data]);
         setComment('');
@@ -67,7 +67,7 @@ const StorePage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/cart/', {
+      const response = await axios.post('https://hisba-backend.onrender.com/api/cart/', {
         product_id: productId,
         quantity: 1,
       }, {

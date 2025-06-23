@@ -42,12 +42,12 @@ const StoreDetail = () => {
                 return;
             }
             try {
-                const response = await axios.get(`http://localhost:8000/api/stores/${id}/`);
+                const response = await axios.get(`https://hisba-backend.onrender.com/api/stores/${id}/`);
                 setStore(response.data);
                 setNewCoverImage(response.data.cover_image);
-                const productsResponse = await axios.get(`http://localhost:8000/api/products/?store=${id}`);
+                const productsResponse = await axios.get(`https://hisba-backend.onrender.com/api/products/?store=${id}`);
                 setProducts(productsResponse.data);
-                const ratingsResponse = await axios.get(`http://localhost:8000/api/ratings/?store_id=${id}`);
+                const ratingsResponse = await axios.get(`https://hisba-backend.onrender.com/api/ratings/?store_id=${id}`);
                 setRatings(ratingsResponse.data);
             } catch (error) {
                 console.error('Error fetching store:', error.response ? error.response.data : error.message);
@@ -64,7 +64,7 @@ const StoreDetail = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:8000/api/stores/delete/${id}/`, {
+            await axios.delete(`https://hisba-backend.onrender.com/api/stores/delete/${id}/`, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`
                 }
@@ -89,7 +89,7 @@ const StoreDetail = () => {
                 formData.append('cover_image', newCoverImage);
             }
 
-            await axios.patch(`http://localhost:8000/api/stores/update/${id}/`, formData, {
+            await axios.patch(`https://hisba-backend.onrender.com/api/stores/update/${id}/`, formData, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`,
                     'Content-Type': 'multipart/form-data'
@@ -116,7 +116,7 @@ const StoreDetail = () => {
 
     const handleProductDelete = async () => {
         try {
-            await axios.delete(`http://localhost:8000/api/products/delete/${selectedProductId}/`, {
+            await axios.delete(`https://hisba-backend.onrender.com/api/products/delete/${selectedProductId}/`, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`
                 }
@@ -152,7 +152,7 @@ const StoreDetail = () => {
                 formData.append('image', editingProduct.image);
             }
 
-            const response = await axios.patch(`http://localhost:8000/api/products/update/${editingProduct.id}/`, formData, {
+            const response = await axios.patch(`https://hisba-backend.onrender.com/api/products/update/${editingProduct.id}/`, formData, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`,
                     'Content-Type': 'multipart/form-data'
@@ -168,7 +168,7 @@ const StoreDetail = () => {
 
     const handleCommentDelete = async () => {
         try {
-            await axios.delete(`http://localhost:8000/api/ratings/delete/${selectedRatingId}/`, {
+            await axios.delete(`https://hisba-backend.onrender.com/api/ratings/delete/${selectedRatingId}/`, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`
                 }

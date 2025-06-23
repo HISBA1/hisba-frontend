@@ -13,7 +13,7 @@ const UserActivityReport = () => {
     useEffect(() => {
         const fetchUserActivity = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/reports/user-activity/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/reports/user-activity/', {
                     headers: {
                         Authorization: `Bearer ${session?.user?.accessToken}`
                     }

@@ -45,7 +45,7 @@ const CheckoutPage = () => {
     
         try {
             const expiryDate = `${expiryMonth}/${expiryYear}`;
-            const response = await axios.post('http://localhost:8000/api/checkout/', {
+            const response = await axios.post('https://hisba-backend.onrender.com/api/checkout/', {
                 address,
                 phone_number: phone,
                 payment_method: paymentMethod,

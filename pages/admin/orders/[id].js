@@ -23,7 +23,7 @@ const OrderDetail = () => {
                 return;
             }
             try {
-                const response = await axios.get(`http://localhost:8000/api/orders/${id}/`, {
+                const response = await axios.get(`https://hisba-backend.onrender.com/api/orders/${id}/`, {
                     headers: {
                         Authorization: `Bearer ${session?.user?.accessToken}`
                     }
@@ -44,7 +44,7 @@ const OrderDetail = () => {
 
     const handleApproveOrder = async () => {
         try {
-            await axios.post(`http://localhost:8000/api/orders/approve/${id}/`, {}, {
+            await axios.post(`https://hisba-backend.onrender.com/api/orders/approve/${id}/`, {}, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`
                 }

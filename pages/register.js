@@ -56,7 +56,7 @@ function RegisterPage() {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/api/signup/', data);
+      const response = await axios.post('https://hisba-backend.onrender.com/api/signup/', data);
       console.log('User registered:', response.data);
       // Save token in cookie
       Cookies.set('token', response.data.access, { expires: 7 });

@@ -38,7 +38,7 @@ const CreateUser = () => {
             formData.append('profile.profile_image', profileImage);
         }
         try {
-            await axios.post('http://localhost:8000/api/users/', formData, {
+            await axios.post('https://hisba-backend.onrender.com/api/users/', formData, {
                 headers: {
                     Authorization: `Bearer ${session.user.accessToken}`,
                     'Content-Type': 'multipart/form-data'

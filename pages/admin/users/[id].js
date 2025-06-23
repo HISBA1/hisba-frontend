@@ -20,7 +20,7 @@ const UserDetail = () => {
         const fetchUser = async () => {
             if (status === 'authenticated' && session?.user?.accessToken && id) {
                 try {
-                    const response = await axios.get(`http://localhost:8000/api/users/${id}/`, {
+                    const response = await axios.get(`https://hisba-backend.onrender.com/api/users/${id}/`, {
                         headers: {
                             Authorization: `Bearer ${session.user.accessToken}`
                         }
@@ -42,7 +42,7 @@ const UserDetail = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:8000/api/users/${id}/`, {
+            await axios.delete(`https://hisba-backend.onrender.com/api/users/${id}/`, {
                 headers: {
                     Authorization: `Bearer ${session.user.accessToken}`
                 }

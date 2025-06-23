@@ -18,7 +18,7 @@ const StoreRequests = () => {
     useEffect(() => {
         const fetchRequests = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/admin/store-requests/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/admin/store-requests/', {
                     headers: {
                         Authorization: `Bearer ${session?.user?.accessToken}`
                     }
@@ -39,7 +39,7 @@ const StoreRequests = () => {
 
     const handleApprove = async (requestId) => {
         try {
-            await axios.post(`http://localhost:8000/api/approve-store-request/${requestId}/`, {}, {
+            await axios.post(`https://hisba-backend.onrender.com/api/approve-store-request/${requestId}/`, {}, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`
                 }

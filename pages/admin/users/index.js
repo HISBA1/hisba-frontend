@@ -26,7 +26,7 @@ const Users = () => {
                 return;
             }
             try {
-                const response = await axios.get('http://localhost:8000/api/users/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/users/', {
                     headers: {
                         Authorization: `Bearer ${session.user.accessToken}`
                     }

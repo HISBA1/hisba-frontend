@@ -13,7 +13,7 @@ const MostOrderedProductsReport = () => {
     useEffect(() => {
         const fetchMostOrderedProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/reports/most-ordered-products/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/reports/most-ordered-products/', {
                     headers: {
                         Authorization: `Bearer ${session?.user?.accessToken}`
                     }

@@ -12,7 +12,7 @@ export default NextAuth({
       },
       authorize: async (credentials) => {
         try {
-          const res = await fetch('http://localhost:8000/api/login/', {
+          const res = await fetch('https://hisba-backend.onrender.com/api/login/', {
             method: 'POST',
             body: JSON.stringify(credentials),
             headers: { 'Content-Type': 'application/json' }

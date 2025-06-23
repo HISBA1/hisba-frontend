@@ -27,32 +27,32 @@ const Dashboard = () => {
             }
             try {
                 const [statsResponse, ordersResponse, usersResponse, storeRequestsResponse, storesResponse, salesResponse] = await Promise.all([
-                    axios.get('http://localhost:8000/api/dashboard-stats/', {
+                    axios.get('https://hisba-backend.onrender.com/api/dashboard-stats/', {
                         headers: {
                             Authorization: `Bearer ${session.user.accessToken}`
                         }
                     }),
-                    axios.get('http://localhost:8000/api/orders/recent/', {
+                    axios.get('https://hisba-backend.onrender.com/api/orders/recent/', {
                         headers: {
                             Authorization: `Bearer ${session.user.accessToken}`
                         }
                     }),
-                    axios.get('http://localhost:8000/api/users/recent/', {
+                    axios.get('https://hisba-backend.onrender.com/api/users/recent/', {
                         headers: {
                             Authorization: `Bearer ${session.user.accessToken}`
                         }
                     }),
-                    axios.get('http://localhost:8000/api/store-requests/recent/', {
+                    axios.get('https://hisba-backend.onrender.com/api/store-requests/recent/', {
                         headers: {
                             Authorization: `Bearer ${session.user.accessToken}`
                         }
                     }),
-                    axios.get('http://localhost:8000/api/stores/', {
+                    axios.get('https://hisba-backend.onrender.com/api/stores/', {
                         headers: {
                             Authorization: `Bearer ${session.user.accessToken}`
                         }
                     }),
-                    axios.get('http://localhost:8000/api/reports/sales/', {
+                    axios.get('https://hisba-backend.onrender.com/api/reports/sales/', {
                         headers: {
                             Authorization: `Bearer ${session.user.accessToken}`
                         }

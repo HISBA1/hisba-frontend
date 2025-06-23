@@ -18,7 +18,7 @@ const Orders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/adminorders/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/adminorders/', {
                     headers: {
                         Authorization: `Bearer ${session?.user?.accessToken}`
                     }
@@ -43,7 +43,7 @@ const Orders = () => {
 
     const handleApproveOrder = async (orderId) => {
         try {
-            await axios.post(`http://localhost:8000/api/orders/approve/${orderId}/`, {}, {
+            await axios.post(`https://hisba-backend.onrender.com/api/orders/approve/${orderId}/`, {}, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`
                 }

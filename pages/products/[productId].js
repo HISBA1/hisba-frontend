@@ -17,7 +17,7 @@ const ProductDetails = () => {
   useEffect(() => {
     if (productId) {
       console.log('Fetching product details for productId:', productId);
-      axiosInstance.get(`http://localhost:8000/api/products/${productId}/`)
+      axiosInstance.get(`https://hisba-backend.onrender.com/api/products/${productId}/`)
         .then(res => {
           console.log('Product data:', res.data);
           setProduct(res.data);
@@ -33,7 +33,7 @@ const ProductDetails = () => {
     }
 
     try {
-      await axiosInstance.post('http://localhost:8000/api/cart/', {
+      await axiosInstance.post('https://hisba-backend.onrender.com/api/cart/', {
         product_id: productId,
         quantity: 1,
       }, {
@@ -55,7 +55,7 @@ const ProductDetails = () => {
   return (
     <div className={styles.productDetailsContainer}>
       <div className={styles.productImageContainer}>
-        <img src={'http://localhost:8000/' + product.image} alt={product.name} className={styles.productImage} />
+        <img src={'https://hisba-backend.onrender.com/' + product.image} alt={product.name} className={styles.productImage} />
       </div>
       <div className={styles.productInfo}>
         <h1 className={styles.productName}>{product.name}</h1>
