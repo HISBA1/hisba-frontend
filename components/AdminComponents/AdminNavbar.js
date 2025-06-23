@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { signOut } from 'next-auth/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt, faBars, faTachometerAlt, faUser, faBox, faTicketAlt , faStore, faChartLine, faClipboardList, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const AdminNavbar = ({ toggleSidebar, isSidebarOpen }) => {
   const router = useRouter();
@@ -36,7 +37,7 @@ const AdminNavbar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
     <div className={styles.navbar}>
       <div className={styles.logo}>
-        <Link href="/admin/dashboard" legacyBehavior><a>Hisba Admin</a></Link>
+        <Link href="/admin/dashboard" legacyBehavior><Link>Hisba Admin</Link></Link>
       </div>
       <div className={styles.links}>
         <Link href="/admin/dashboard" legacyBehavior><a><FontAwesomeIcon icon={faTachometerAlt} /> Dashboard</a></Link>
@@ -45,15 +46,15 @@ const AdminNavbar = ({ toggleSidebar, isSidebarOpen }) => {
         <Link href="/admin/stores" legacyBehavior><a><FontAwesomeIcon icon={faStore} /> Stores</a></Link>
         
         <div className={styles.navItemDropdown} onClick={toggleDropdown} ref={dropdownRef}>
-          <a className={styles.navItem}><FontAwesomeIcon icon={faBars} /></a>
+          <Link className={styles.navItem}><FontAwesomeIcon icon={faBars} /></Link>
           {isDropdownOpen && (
             <ul className={styles.dropdownMenu}>
-              <li><a href="/profile" className={styles.dropdownItem}><FontAwesomeIcon icon={faUser} /> My Profile</a></li>
-              <li><a href="/admin/stores" className={styles.dropdownItem}><FontAwesomeIcon icon={faStore} /> Stores</a></li>
-              <li><a href="/admin/orders" className={styles.dropdownItem}><FontAwesomeIcon icon={faClipboardList} /> Orders</a></li>
-              <li><a href="/admin/store-requests" className={styles.dropdownItem}><FontAwesomeIcon icon={faFileAlt} /> Store Requests</a></li>
-              <li><a href="/admin/promo-codes" className={styles.dropdownItem}><FontAwesomeIcon icon={faTicketAlt} /> Promo Code</a></li>
-              <li><a href="/admin/reports" className={styles.dropdownItem}><FontAwesomeIcon icon={faChartLine} /> Reports</a></li>
+              <li><Link href="/profile" className={styles.dropdownItem}><FontAwesomeIcon icon={faUser} /> My Profile</Link></li>
+              <li><Link href="/admin/stores" className={styles.dropdownItem}><FontAwesomeIcon icon={faStore} /> Stores</Link></li>
+              <li><Link href="/admin/orders" className={styles.dropdownItem}><FontAwesomeIcon icon={faClipboardList} /> Orders</Link></li>
+              <li><Link href="/admin/store-requests" className={styles.dropdownItem}><FontAwesomeIcon icon={faFileAlt} /> Store Requests</Link></li>
+              <li><Link href="/admin/promo-codes" className={styles.dropdownItem}><FontAwesomeIcon icon={faTicketAlt} /> Promo Code</Link></li>
+              <li><Link href="/admin/reports" className={styles.dropdownItem}><FontAwesomeIcon icon={faChartLine} /> Reports</Link></li>
               <li><button onClick={handleLogout} className={styles.logoutButton}><FontAwesomeIcon icon={faSignOutAlt} /> Log out</button></li>
             </ul>
           )}

@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/RegisterPage.module.css';
+import Link from 'next/link';
 
 function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -229,7 +230,7 @@ function RegisterPage() {
           Register
         </motion.button>
         {error && <motion.p className={styles.errorMessage} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>{error}</motion.p>}
-        <a href="/login" className={styles.link}>Already have an account? Login!</a>
+        <Link  href="/login" className={styles.link}>Already have an account? Login!</Link >
       </motion.form>
     </div>
   );

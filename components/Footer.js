@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles/Footer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -15,16 +16,16 @@ const Footer = () => {
           <div className={styles.column}>
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/register">Register</a></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/register">Register</Link></li>
             </ul>
           </div>
           <div className={styles.column}>
             <h3>Follow Us</h3>
             <div className={styles.socialIcons}>
-              <a href="https://www.facebook.com"><FontAwesomeIcon icon={faFacebook} /></a>
-              <a href="https://www.twitter.com"><FontAwesomeIcon icon={faTwitter} /></a>
-              <a href="https://www.instagram.com"><FontAwesomeIcon icon={faInstagram} /></a>
+              <Link href="https://www.facebook.com"><FontAwesomeIcon icon={faFacebook} /></Link>
+              <Link href="https://www.twitter.com"><FontAwesomeIcon icon={faTwitter} /></Link>
+              <Link href="https://www.instagram.com"><FontAwesomeIcon icon={faInstagram} /></Link>
             </div>
           </div>
         </div>

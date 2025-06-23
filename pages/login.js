@@ -3,6 +3,7 @@ import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import styles from '../styles/LoginPage.module.css';
+import Link from 'next/link';
 
 function LoginPage() {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
@@ -83,8 +84,8 @@ function LoginPage() {
           Login
         </motion.button>
         {error && <motion.p className={styles.errorMessage}>{error}</motion.p>}
-        <a href="#" className={styles.link}>Forgot Password?</a>
-        <a href="/register" className={styles.link}>Don't have an account? Sign up!</a>
+        <Link  href="#" className={styles.link}>Forgot Password?</Link >
+        <Link  href="/register" className={styles.link}>Don't have an account? Sign up!</Link >
       </motion.form>
     </div>
   );

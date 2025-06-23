@@ -6,6 +6,7 @@ import { faSearch, faUser, faBars, faSignOutAlt, faHome, faShoppingCart, faInfoC
 import { motion } from 'framer-motion';
 import styles from './Navbar.module.css';
 import axiosInstance from '../lib/axios';
+import Link from 'next/link';
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -83,38 +84,38 @@ const Navbar = () => {
         className={styles.logo}
         whileHover={{ scale: 1.1, rotate: 5 }}
       >
-        <a href="/">HISBA</a>
+        <Link href="/">HISBA</Link>
       </motion.div>
       <div className={styles.rightSection}>
         <ul className={`${styles.navList} ${menuOpen ? styles.navListOpen : ''}`}>
           <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className={styles.searchIcon}>
             <FontAwesomeIcon icon={faSearch} onClick={toggleSearch} />
           </motion.li>
-          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}><a href="/" className={styles.navItem}><FontAwesomeIcon icon={faHome} /> </a></motion.li>
+          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}><Link href="/" className={styles.navItem}><FontAwesomeIcon icon={faHome} /> </Link></motion.li>
           {session && (
             <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className={styles.cartIcon}>
-              <a href="/cart" className={styles.navItem}>
+              <Link href="/cart" className={styles.navItem}>
                 <FontAwesomeIcon icon={faShoppingCart} />
                 {cartCount > 0 && <span className={styles.cartCount}>{cartCount}</span>}
-              </a>
+              </Link>
             </motion.li>
           )}
           {session && <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}><button onClick={handleLogout} className={styles.logoutButton}><FontAwesomeIcon icon={faSignOutAlt} className={styles.navItem} /></button></motion.li>}
           {!session && (
             <>
-              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}><a href="/register" className={styles.navItem}><FontAwesomeIcon icon={faAddressCard} /> Register</a></motion.li>
-              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}><a href="/login" className={styles.navItem}><FontAwesomeIcon icon={faSignInAlt} /> </a></motion.li>
+              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}><Link href="/register" className={styles.navItem}><FontAwesomeIcon icon={faAddressCard} /> Register</Link></motion.li>
+              <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}><Link href="/login" className={styles.navItem}><FontAwesomeIcon icon={faSignInAlt} /> </Link></motion.li>
             </>
           )}
           {session && (
             <motion.li className={styles.navItemDropdown} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-              <a href="#" className={styles.navItem}><FontAwesomeIcon icon={faBars} /> </a>
+              <Link href="#" className={styles.navItem}><FontAwesomeIcon icon={faBars} /> </Link>
               <ul className={styles.dropdownMenu}>
-                <li><a href="/profile" className={styles.dropdownItem}>My Profile</a></li>
-                <li><a href="/orders" className={styles.dropdownItem}>My Order</a></li>
-{session?.user?.role === 'customer' &&( <li><a href="/storeRequest" className={styles.dropdownItem}>Open Stall</a></li>)}
-{session?.user?.role === 'seller' && ( <li><a href="/SellerOrders" className={styles.dropdownItem}>Incoming orders</a></li>)}
-{session?.user?.role === 'seller' && ( <li><a href="/MyStorePage" className={styles.dropdownItem}>my stall</a></li>)}
+                <li><Link href="/profile" className={styles.dropdownItem}>My Profile</Link></li>
+                <li><Link href="/orders" className={styles.dropdownItem}>My Order</Link></li>
+{session?.user?.role === 'customer' &&( <li><Link href="/storeRequest" className={styles.dropdownItem}>Open Stall</Link></li>)}
+{session?.user?.role === 'seller' && ( <li><Link href="/SellerOrders" className={styles.dropdownItem}>Incoming orders</Link></li>)}
+{session?.user?.role === 'seller' && ( <li><Link href="/MyStorePage" className={styles.dropdownItem}>my stall</Link></li>)}
 
                 <li><button onClick={handleLogout} className={styles.logoutButton}><FontAwesomeIcon icon={faSignOutAlt} />Log out </button></li>
               </ul>
