@@ -26,7 +26,7 @@ const ProductDetail = () => {
                 return;
             }
             try {
-                const response = await axios.get(`http://localhost:8000/api/products/${id}/`);
+                const response = await axios.get(`https://hisba-backend.onrender.com/api/products/${id}/`);
                 setProduct(response.data);
             } catch (error) {
                 console.error('Error fetching product:', error.response ? error.response.data : error.message);
@@ -52,7 +52,7 @@ const ProductDetail = () => {
                 formData.append('image', newImage);
             }
 
-            await axios.patch(`http://localhost:8000/api/products/update/${id}/`, formData, {
+            await axios.patch(`https://hisba-backend.onrender.com/api/products/update/${id}/`, formData, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`,
                     'Content-Type': 'multipart/form-data'
@@ -79,7 +79,7 @@ const ProductDetail = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:8000/api/products/delete/${id}/`, {
+            await axios.delete(`https://hisba-backend.onrender.com/api/products/delete/${id}/`, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`
                 }

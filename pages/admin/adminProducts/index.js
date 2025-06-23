@@ -18,7 +18,7 @@ const Products = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/products/');
+                const response = await axios.get('https://hisba-backend.onrender.com/api/products/');
                 setProducts(response.data);
                 setLoading(false);
             } catch (error) {
@@ -41,7 +41,7 @@ const Products = () => {
 
     const handleDelete = async (productId) => {
         try {
-            await axios.delete(`http://localhost:8000/api/products/delete/${productId}/`, {
+            await axios.delete(`https://hisba-backend.onrender.com/api/products/delete/${productId}/`, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`
                 }

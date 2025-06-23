@@ -36,7 +36,7 @@ const StoreRequest = () => {
     }
 
     try {
-      await axios.post('http://localhost:8000/api/store-request/', storeRequest, {
+      await axios.post('https://hisba-backend.onrender.com/api/store-request/', storeRequest, {
         headers: {
           Authorization: `Bearer ${session.user.accessToken}`
         }

@@ -18,7 +18,7 @@ const Recommendations = () => {
             }
 
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/recommendations/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/recommendations/', {
                     headers: {
                         Authorization: `Bearer ${session.user.accessToken}`
                     }
@@ -39,7 +39,7 @@ const Recommendations = () => {
     }
 
     try {
-      const response = await axiosInstance.post('http://127.0.0.1:8000/api/cart/', {
+      const response = await axiosInstance.post('https://hisba-backend.onrender.com/api/cart/', {
         product_id: productId,
         quantity: quantity,
       }, {
@@ -69,7 +69,7 @@ const Recommendations = () => {
             <div className={styles.cardsContainer}>
                 {recommendations.slice(0, 4).map(product => ( // عرض 4 منتجات فقط
                     <div key={product.id} className={styles.card}>
-                        <img src={`http://127.0.0.1:8000${product.image}`} alt={product.name} className={styles.image} />
+                        <img src={`https://hisba-backend.onrender.com${product.image}`} alt={product.name} className={styles.image} />
                         <div className={styles.info}>
                             <h3>{product.name}</h3>
                             <p>{product.description}</p>

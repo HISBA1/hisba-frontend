@@ -37,7 +37,7 @@ const RecommendedStores = () => {
             <div className={styles.cardsContainer}>
                 {stores.map(store => (
                     <div key={store.id} className={styles.card}>
-                        <img src={`http://127.0.0.1:8000${store.cover_image}`} alt={store.name} className={styles.image} />
+                        <img src={`https://hisba-backend.onrender.com${store.cover_image}`} alt={store.name} className={styles.image} />
                         <div className={styles.info}>
                             <h3>{store.name}</h3>
                             <p>{store.address}</p>

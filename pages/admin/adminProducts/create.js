@@ -21,7 +21,7 @@ const AdminCreateProduct = () => {
     useEffect(() => {
         const fetchStores = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/stores/', {
+                const response = await axios.get('https://hisba-backend.onrender.com/api/stores/', {
                     headers: {
                         Authorization: `Bearer ${session?.user?.accessToken}`
                     }
@@ -51,7 +51,7 @@ const AdminCreateProduct = () => {
                 formData.append('image', image);
             }
 
-            await axios.post('http://localhost:8000/api/products/admin-create/', formData, {
+            await axios.post('https://hisba-backend.onrender.com/api/products/admin-create/', formData, {
                 headers: {
                     Authorization: `Bearer ${session?.user?.accessToken}`,
                     'Content-Type': 'multipart/form-data'
