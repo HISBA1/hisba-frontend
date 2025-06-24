@@ -66,21 +66,20 @@ export default NextAuth({
       return session;
     },
   },
-  // إزالة قسم events بالكامل
-  // events: {
-  //   async signIn({ token, req, res }) {
-  //     setCookie({ res }, 'accessToken', token.accessToken, {
-  //       httpOnly: true,
-  //       sameSite: 'lax',
-  //       secure: process.env.NODE_ENV === 'production',
-  //       maxAge: 30 * 24 * 60 * 60,
-  //       path: '/',
-  //     } );
-  //   },
-  //   async signOut({ req, res }) {
-  //     destroyCookie({ res }, 'accessToken', { path: '/' });
-  //   }
-  // },
+   events: {
+    async signIn({ token, req, res }) {
+      setCookie({ res }, 'accessToken', token.accessToken, {
+         httpOnly: true,
+         sameSite: 'lax',
+         secure: process.env.NODE_ENV === 'production',
+         maxAge: 30 * 24 * 60 * 60,
+         path: '/',
+       } );
+     },
+     async signOut({ req, res }) {
+       destroyCookie({ res }, 'accessToken', { path: '/' });
+     }
+   },
   pages: {
     signIn: '/login',
     error: '/auth/error'
