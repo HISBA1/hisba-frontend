@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-// import { setCookie, destroyCookie } from 'nookies'; // إزالة هذا الاستيراد
+import { setCookie, destroyCookie } from 'nookies'; // إزالة هذا الاستيراد
 
 export default NextAuth({
   providers: [
