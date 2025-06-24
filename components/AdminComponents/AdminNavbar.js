@@ -36,7 +36,7 @@ const AdminNavbar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
     <div className={styles.navbar}>
       <div className={styles.logo}>
-        <Link href="/admin/dashboard" legacyBehavior><Link>Hisba Admin</Link></Link>
+          <Link href="/admin/dashboard" legacyBehavior><a>Hisba Admin</a></Link>
       </div>
       <div className={styles.links}>
         <Link href="/admin/dashboard" legacyBehavior><a><FontAwesomeIcon icon={faTachometerAlt} /> Dashboard</a></Link>
@@ -45,8 +45,8 @@ const AdminNavbar = ({ toggleSidebar, isSidebarOpen }) => {
         <Link href="/admin/stores" legacyBehavior><a><FontAwesomeIcon icon={faStore} /> Stores</a></Link>
         
         <div className={styles.navItemDropdown} onClick={toggleDropdown} ref={dropdownRef}>
-          <Link className={styles.navItem}><FontAwesomeIcon icon={faBars} /></Link>
-          {isDropdownOpen && (
+            <Link href="#" className={styles.navItem}><FontAwesomeIcon icon={faBars} /></Link>
+        {isDropdownOpen && (
             <ul className={styles.dropdownMenu}>
               <li><Link href="/profile" className={styles.dropdownItem}><FontAwesomeIcon icon={faUser} /> My Profile</Link></li>
               <li><Link href="/admin/stores" className={styles.dropdownItem}><FontAwesomeIcon icon={faStore} /> Stores</Link></li>
