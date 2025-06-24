@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { setCookie, destroyCookie } from 'nookies';
+// import { setCookie, destroyCookie } from 'nookies'; // إزالة هذا الاستيراد
 
 export default NextAuth({
   providers: [
@@ -14,7 +14,7 @@ export default NextAuth({
         try {
           const res = await fetch('https://hisba-backend.onrender.com/api/login/', {
             method: 'POST',
-            body: JSON.stringify(credentials),
+            body: JSON.stringify(credentials ),
             headers: { 'Content-Type': 'application/json' }
           });
 
@@ -30,8 +30,8 @@ export default NextAuth({
               id: user.user_id,
               name: user.username,
               role: user.role,
-              accessToken: user.access,
-              refreshToken: user.refresh
+              accessToken: user.accessToken,
+              refreshToken: user.refreshToken
             };
           } else {
             throw new Error('Invalid response from server');
@@ -66,23 +66,24 @@ export default NextAuth({
       return session;
     },
   },
-  events: {
-    async signIn({ token, req, res }) {
-      setCookie({ res }, 'accessToken', token.accessToken, {
-        httpOnly: true,
-        sameSite: 'lax',
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 30 * 24 * 60 * 60,
-        path: '/',
-      });
-    },
-    async signOut({ req, res }) {
-      destroyCookie({ res }, 'accessToken', { path: '/' });
-    }
-  },
+  // إزالة قسم events بالكامل
+  // events: {
+  //   async signIn({ token, req, res }) {
+  //     setCookie({ res }, 'accessToken', token.accessToken, {
+  //       httpOnly: true,
+  //       sameSite: 'lax',
+  //       secure: process.env.NODE_ENV === 'production',
+  //       maxAge: 30 * 24 * 60 * 60,
+  //       path: '/',
+  //     } );
+  //   },
+  //   async signOut({ req, res }) {
+  //     destroyCookie({ res }, 'accessToken', { path: '/' });
+  //   }
+  // },
   pages: {
     signIn: '/login',
     error: '/auth/error'
   },
-  secret: process.env.NEXTAUTH_SECRET, // Ensure you have a secret key in your environment variables
+  secret: process.env.NEXTAUTH_SECRET,
 });
