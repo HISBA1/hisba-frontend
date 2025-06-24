@@ -69,7 +69,7 @@ const Recommendations = () => {
             <div className={styles.cardsContainer}>
                 {recommendations.slice(0, 4).map(product => ( // عرض 4 منتجات فقط
                     <div key={product.id} className={styles.card}>
-                        <img src={`https://hisba-backend.onrender.com${product.image}`} alt={product.name} className={styles.image} />
+                        <img src={`https://hisba-backend.onrender.com/${product.image}`} alt={product.name} className={styles.image} />
                         <div className={styles.info}>
                             <h3>{product.name}</h3>
                             <p>{product.description}</p>

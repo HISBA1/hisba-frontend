@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { CartProvider } from '../context/CartContext';
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  console.log("MyApp session:", session);
   return (
     <SessionProvider session={session}>
      <CartProvider>
